@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import Button from "../components/button"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -31,12 +32,13 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
+
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+       
 
         <ul
           style={{
@@ -62,6 +64,12 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+
+        <div>
+          <Link to="/">
+            <Button>Home</Button>
+          </Link>
+        </div>
       </Layout>
     )
   }
